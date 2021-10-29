@@ -1,0 +1,19 @@
+.banner-contianer {
+  background: linear-gradient(#aafff9a1, #75757561),
+    url("../../images/banner-2.gif");
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner-contianer {
+    height: 30vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-contianer {
+    height: 60vh;
+  }
+}
