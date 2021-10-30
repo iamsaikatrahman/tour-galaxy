@@ -15,12 +15,14 @@ const BookingForm = ({ name, price, duration, imgUrl }) => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Booking Successfully done.");
-        reset();
-      }
-    });
+    axios
+      .post("https://safe-citadel-76628.herokuapp.com/orders", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Booking Successfully done.");
+          reset();
+        }
+      });
   };
   return (
     <div className="px-4">

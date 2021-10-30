@@ -9,7 +9,7 @@ const MyBooking = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://safe-citadel-76628.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => {
         const myorder = data.filter((item) => item.email === user.email);
@@ -20,7 +20,7 @@ const MyBooking = () => {
   const handleDeleteTour = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/orders/${id}`;
+      const url = `https://safe-citadel-76628.herokuapp.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
