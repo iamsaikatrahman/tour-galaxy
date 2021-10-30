@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import BookingForm from "./BookingForm";
+import CustomSlider from "./CustomSlider";
 import TourInfo from "./TourInfo";
 
 const TourDetails = () => {
@@ -20,6 +21,7 @@ const TourDetails = () => {
           <TourInfo {...tour} />
           <BookingForm {...tour} />
         </div>
+        <CustomSlider />
         {/* What to Expect */}
         {/* FAQ with get a question */}
       </div>
