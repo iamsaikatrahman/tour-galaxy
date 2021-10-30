@@ -67,12 +67,12 @@ const Navbar = () => {
             </Link>
           )}
           {user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/managebooking">
               Manage Booking
             </Link>
           )}
           {user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/addtour">
               Add Tours
             </Link>
           )}
@@ -131,12 +131,12 @@ const Navbar = () => {
             </Link>
           )}
           {user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/managebooking">
               Manage Booking
             </Link>
           )}
           {user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/addtour">
               Add Tours
             </Link>
           )}
