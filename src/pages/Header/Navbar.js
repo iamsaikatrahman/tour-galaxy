@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/brand-logo.png";
+import useAuth from "../../hooks/useAuth";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const { user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
   const handleMenu = () => {
     setIsOpen(!isOpen);
   };
-  //   console.log(isOpen);
   return (
     <div className="fixed z-10 top-0 w-full bg-white text-black shadow-sm">
-      <nav className="container mx-auto px-4 flex justify-between items-center h-20 ">
+      <nav className="container mx-auto  flex justify-between items-center h-20 ">
         <Link to="/">
           <div className="flex items-center">
             <img
@@ -25,7 +26,7 @@ const Navbar = () => {
             </h2>
           </div>
         </Link>
-        <div className="px-8 cursor-pointer lg:hidden" onClick={handleMenu}>
+        <div className="px-4 cursor-pointer lg:hidden" onClick={handleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -41,39 +42,48 @@ const Navbar = () => {
             />
           </svg>
         </div>
-        <div className="pr-8 lg:block hidden">
+        <div className="pr-4 lg:block hidden">
           <Link className="p-2 text-lg font-medium" to="/home">
             Home
           </Link>
           <Link className="p-2 text-lg font-medium" to="/home">
-            Home
+            About Us
+          </Link>
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              My Booking
+            </Link>
+          )}
+          <Link className="p-2 text-lg font-medium" to="/home">
+            Manage Booking
           </Link>
           <Link className="p-2 text-lg font-medium" to="/home">
-            Home
+            Add Tours
           </Link>
-          {/* {user?.email ? (
-            <span className="font-medium">{user.displayName}</span>
-          ) : ( */}
-          <Link to="/register">
-            <button className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
-              Register
-            </button>
-          </Link>
-          {/* //   )} */}
-          {/* {user?.email ? (
+          {user?.email ? (
+            <span className="font-medium text-lg">
+              <img
+                src={user.photoURL}
+                alt=""
+                className="h-8 w-8 rounded-full inline"
+              />{" "}
+              {user.displayName}
+            </span>
+          ) : (
+            <Link to="/login">
+              <button className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                Login
+              </button>
+            </Link>
+          )}
+          {user?.email && (
             <button
               onClick={logOut}
-              className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
+              className="m-2 p-2 bg-blue-500 text-gray-100 text-xl font-bold rounded-lg focus:border-4 border-blue-300"
             >
-              LogOut
+              <IoLogOutOutline />
             </button>
-          ) : ( */}
-          <Link to="/admin">
-            <button className="m-2 p-2 pl-5 pr-5 bg-gray-700 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300">
-              Admin
-            </button>
-          </Link>
-          {/* )} */}
+          )}
         </div>
       </nav>
       {isOpen && (
@@ -85,34 +95,41 @@ const Navbar = () => {
             Home
           </Link>
           <Link className="p-2 text-lg font-medium" to="/home">
-            Home
+            About Us
           </Link>
           <Link className="p-2 text-lg font-medium" to="/home">
-            Home
+            My Booking
           </Link>
-          {/* {user?.email ? (
-            <span className="font-medium">{user.displayName}</span>
-          ) : ( */}
-          <Link to="/register">
-            <button className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
-              Register
-            </button>
+          <Link className="p-2 text-lg font-medium" to="/home">
+            Manage Booking
           </Link>
-          {/* )} */}
-          {/* {user?.email ? (
+          <Link className="p-2 text-lg font-medium" to="/home">
+            Add Tours
+          </Link>
+          {user?.email ? (
+            <span className="font-medium text-lg">
+              <img
+                src={user.photoURL}
+                alt=""
+                className="h-8 w-8 rounded-full inline"
+              />{" "}
+              {user.displayName}
+            </span>
+          ) : (
+            <Link to="/login">
+              <button className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                Login
+              </button>
+            </Link>
+          )}
+          {user?.email && (
             <button
               onClick={logOut}
               className="m-2 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
             >
               LogOut
             </button>
-          ) : ( */}
-          <Link to="/admin">
-            <button className="m-2 p-2 pl-5 pr-5 bg-gray-700 text-gray-100 text-lg rounded-lg focus:border-4 border-gray-300">
-              Admin
-            </button>
-          </Link>
-          {/* )} */}
+          )}
         </div>
       )}
     </div>

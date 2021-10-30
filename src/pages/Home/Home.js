@@ -15,7 +15,6 @@ const Home = () => {
         setIsLoading(false);
       });
   }, []);
-  console.log(isloading);
   return (
     <div style={{ paddingTop: "75px" }}>
       <Banner />

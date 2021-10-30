@@ -50,11 +50,15 @@ const CustomSlider = () => {
       return checkNumber(newIndex);
     });
   };
-  useEffect(() => {
+  const autoplay = () => {
     setInterval(() => {
       nextPerson();
     }, 3000);
+  };
+  useEffect(() => {
+    autoplay();
   }, []);
+
   return (
     <div>
       <div className="flex justify-between">
