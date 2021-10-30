@@ -5,6 +5,7 @@ import PrivateRoute from "./pages/Authentication/PrivateRoute/PrivateRoute";
 import Footer from "./pages/Footer/Footer";
 import Header from "./pages/Header/Header";
 import Home from "./pages/Home/Home";
+import MyBooking from "./pages/MyBooking/MyBooking";
 import NotFound from "./pages/NotFound/NotFound";
 import TourDetails from "./pages/TourDetails/TourDetails";
 
@@ -28,6 +29,9 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
+              <PrivateRoute path="/mybooking">
+                <MyBooking />
+              </PrivateRoute>
               <Route path="*">
                 <NotFound />
               </Route>

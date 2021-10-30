@@ -46,20 +46,36 @@ const Navbar = () => {
           <Link className="p-2 text-lg font-medium" to="/home">
             Home
           </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            About Us
-          </Link>
-          {user?.email && (
+          {!user?.email && (
             <Link className="p-2 text-lg font-medium" to="/home">
+              About Us
+            </Link>
+          )}
+          {!user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Contact Us
+            </Link>
+          )}
+          {!user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Blog
+            </Link>
+          )}
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/mybooking">
               My Booking
             </Link>
           )}
-          <Link className="p-2 text-lg font-medium" to="/home">
-            Manage Booking
-          </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            Add Tours
-          </Link>
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Manage Booking
+            </Link>
+          )}
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Add Tours
+            </Link>
+          )}
           {user?.email ? (
             <span className="font-medium text-lg">
               <img
@@ -94,18 +110,36 @@ const Navbar = () => {
           <Link className="p-2 text-lg font-medium" to="/home">
             Home
           </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            About Us
-          </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            My Booking
-          </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            Manage Booking
-          </Link>
-          <Link className="p-2 text-lg font-medium" to="/home">
-            Add Tours
-          </Link>
+          {!user.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              About Us
+            </Link>
+          )}
+          {!user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Contact Us
+            </Link>
+          )}
+          {!user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Blog
+            </Link>
+          )}
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/mybooking">
+              My Booking
+            </Link>
+          )}
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Manage Booking
+            </Link>
+          )}
+          {user?.email && (
+            <Link className="p-2 text-lg font-medium" to="/home">
+              Add Tours
+            </Link>
+          )}
           {user?.email ? (
             <span className="font-medium text-lg">
               <img
