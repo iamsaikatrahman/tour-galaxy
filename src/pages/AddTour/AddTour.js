@@ -27,10 +27,14 @@ const AddTour = () => {
       <div className="grid md:grid-cols-2 min-h-screen">
         <div className="hidden md:block ">
           <div className="addTourbg flex justify-center items-center min-h-screen">
-            <div>
+            <div className="p-8">
               <h2 className="text-4xl text-white font-bold">
                 Add New Traveling Place.
               </h2>
+              <p className="text-white font-bold mt-4 text-2xl">
+                “Travel makes one modest. You see what a tiny place you occupy
+                in the world.” -Gustav Flaubert
+              </p>
             </div>
           </div>
         </div>
