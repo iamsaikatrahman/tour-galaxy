@@ -4,6 +4,7 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import AddTour from "./pages/AddTour/AddTour";
 import Login from "./pages/Authentication/Login";
 import PrivateRoute from "./pages/Authentication/PrivateRoute/PrivateRoute";
+import Blogs from "./pages/Blogs/Blogs";
 import Footer from "./pages/Footer/Footer";
 import Header from "./pages/Header/Header";
 import Home from "./pages/Home/Home";
@@ -43,6 +44,9 @@ function App() {
               </PrivateRoute>
               <Route path="/aboutus">
                 <AboutUs />
+              </Route>
+              <Route path="/blogs">
+                <Blogs />
               </Route>
               <Route path="*">
                 <NotFound />
