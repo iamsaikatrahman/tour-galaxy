@@ -33,7 +33,6 @@ const MyBooking = () => {
         });
     }
   };
-  console.log(mybooking.length);
   return (
     <div style={{ paddingTop: "85px" }}>
       <div className="container mx-auto px-4">

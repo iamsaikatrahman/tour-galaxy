@@ -1,0 +1,8 @@
+.addTourbg {
+  background: linear-gradient(#0c121c8f, #80808096),
+    url("https://images.unsplash.com/photo-1586521995568-39abaa0c2311?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

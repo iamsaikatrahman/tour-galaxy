@@ -20,7 +20,6 @@ const BookingForm = ({ name, price, duration, country, imgUrl }) => {
     data.tourduration = duration;
     data.country = country;
     data.tourstatus = "Pending";
-    console.log(data);
     axios
       .post("https://safe-citadel-76628.herokuapp.com/orders", data)
       .then((res) => {
