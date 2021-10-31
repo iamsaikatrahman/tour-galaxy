@@ -3,6 +3,7 @@ import BlogCard from "../../components/BlogCard";
 import Loading from "../../components/Loading";
 import ToursCard from "../../components/ToursCard";
 import Banner from "./Banner";
+import Feedback from "./Feedback";
 import "./Home.css";
 import MiniAboutUs from "./MiniAboutUs";
 
@@ -45,6 +46,8 @@ const Home = () => {
         )}
         {/* About Us */}
         <MiniAboutUs />
+        {/* Feedback */}
+        <Feedback />
         {/* Our Blogs */}
         <h2 className="font-bold text-3xl text-center mt-8 my-4">
           Our Blogs & News
