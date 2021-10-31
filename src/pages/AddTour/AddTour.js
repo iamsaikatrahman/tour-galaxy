@@ -13,12 +13,14 @@ const AddTour = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/tours", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("New Tour Add Sucessfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://safe-citadel-76628.herokuapp.com/tours", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("New Tour Add Sucessfully");
+          reset();
+        }
+      });
   };
   return (
     <div style={{ paddingTop: "85px" }}>
