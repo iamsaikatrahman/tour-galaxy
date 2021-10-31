@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MiniAboutUs = () => {
   return (
@@ -15,9 +16,11 @@ const MiniAboutUs = () => {
           pin, download, and print them off to put up around your house for
           inspiration!
         </p>
-        <button className=" mt-4 font-medium p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
-          Read More About Us
-        </button>
+        <Link to="/aboutus">
+          <button className=" mt-4 font-medium p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+            Read More About Us
+          </button>
+        </Link>
       </div>
       <div className="w-full">
         <img

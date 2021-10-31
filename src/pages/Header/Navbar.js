@@ -47,7 +47,7 @@ const Navbar = () => {
             Home
           </Link>
           {!user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/aboutus">
               About Us
             </Link>
           )}
@@ -111,7 +111,7 @@ const Navbar = () => {
             Home
           </Link>
           {!user.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/aboutus">
               About Us
             </Link>
           )}

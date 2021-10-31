@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AuthProvider from "./context/AuthProvider";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import AddTour from "./pages/AddTour/AddTour";
 import Login from "./pages/Authentication/Login";
 import PrivateRoute from "./pages/Authentication/PrivateRoute/PrivateRoute";
@@ -40,6 +41,9 @@ function App() {
               <PrivateRoute path="/addtour">
                 <AddTour />
               </PrivateRoute>
+              <Route path="/aboutus">
+                <AboutUs />
+              </Route>
               <Route path="*">
                 <NotFound />
               </Route>

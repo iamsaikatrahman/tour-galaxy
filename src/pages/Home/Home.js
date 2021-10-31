@@ -21,7 +21,7 @@ const Home = () => {
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://safe-citadel-76628.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);

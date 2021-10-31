@@ -5,7 +5,7 @@ import "./TestimonialCard.css";
 const TestimonialCard = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/feedbacks")
+    fetch("https://safe-citadel-76628.herokuapp.com/feedbacks")
       .then((res) => res.json())
       .then((data) => setFeedbacks(data));
   }, []);
