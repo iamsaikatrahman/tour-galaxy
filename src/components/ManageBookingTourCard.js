@@ -14,7 +14,7 @@ const ManageBookingTourCard = ({
   const [isApprove, setIsApprove] = useState(tourstatus);
   const handleUpdateStatus = (id) => {
     const data = { tourstatus };
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://safe-citadel-76628.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

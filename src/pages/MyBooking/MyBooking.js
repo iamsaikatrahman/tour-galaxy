@@ -9,7 +9,7 @@ const MyBooking = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myorders/${user.email}`)
+    fetch(`https://safe-citadel-76628.herokuapp.com/myorders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyBooking(data);
