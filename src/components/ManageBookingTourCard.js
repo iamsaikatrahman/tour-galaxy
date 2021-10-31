@@ -11,9 +11,34 @@ const ManageBookingTourCard = ({
   tourstatus,
   handleDeleteTour,
 }) => {
-  // const [isApprove, setIsApprove] = useState();
+  const [isApprove, setIsApprove] = useState(tourstatus);
+  const handleUpdateStatus = (id) => {
+    const data = { tourstatus };
+    const url = `http://localhost:5000/orders/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert("Update Successfully Done!!");
+        }
+      });
+  };
   const handleApprove = () => {
-    tourstatus = "Approved";
+    if (isApprove === "Pending") {
+      const proceed = window.confirm(
+        "Are you sure, You want to approve this booking?"
+      );
+      if (proceed) {
+        setIsApprove((tourstatus = "Approved"));
+        handleUpdateStatus(_id);
+      }
+    }
   };
   return (
     <div
@@ -58,15 +83,21 @@ const ManageBookingTourCard = ({
           <span className="text-xs text-indigo-300 mt-0">by {name}</span>
         </div>
         <p className="text-xs text-gray-500 w-4/5">{tourduration}</p>
-        <p className="text-xs text-gray-500 w-4/5">Status: {tourstatus}</p>
+        <p className="text-xs font-bold text-gray-500 w-4/5">
+          Status: {isApprove}
+        </p>
         <div className="w-full flex justify-between items-center">
           <h1 className="font-bold text-gray-500">${tourprice}</h1>
-          <button
-            onClick={handleApprove}
-            className="bg-gray-700 mr-5 text-white px-3 py-1 rounded shadow-md"
-          >
-            Approve
-          </button>
+          {isApprove === "Pending" && (
+            <button
+              onClick={() => {
+                handleApprove();
+              }}
+              className="bg-gray-700 mr-5 text-white px-3 py-1 rounded shadow-md"
+            >
+              Approve
+            </button>
+          )}
         </div>
         <div className="w-full flex justify-between items-center">
           <button

@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 
-const BookingForm = ({ name, price, duration, imgUrl }) => {
+const BookingForm = ({ name, price, duration, country, imgUrl }) => {
   const { user } = useAuth();
   const { displayName, email } = user;
   const {
@@ -14,6 +14,12 @@ const BookingForm = ({ name, price, duration, imgUrl }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    data.tourname = name;
+    data.tourimglink = imgUrl;
+    data.tourprice = price;
+    data.tourduration = duration;
+    data.country = country;
+    data.tourstatus = "Pending";
     console.log(data);
     axios
       .post("https://safe-citadel-76628.herokuapp.com/orders", data)
@@ -58,36 +64,6 @@ const BookingForm = ({ name, price, duration, imgUrl }) => {
             {...register("qntPeople", { required: true })}
           />
           {errors.qntPeople && <span>This field is required</span>}
-          <input
-            className="hidden"
-            placeholder="Tour Image"
-            type="text"
-            {...register("tourimglink", setValue("tourimglink", imgUrl))}
-          />
-          <input
-            className="hidden"
-            placeholder="Tour Name"
-            type="text"
-            {...register("tourname", setValue("tourname", name))}
-          />
-          <input
-            className="hidden"
-            placeholder="Tour Price"
-            type="number"
-            {...register("tourprice", setValue("tourprice", price))}
-          />
-          <input
-            className="hidden"
-            placeholder="Tour Duration"
-            type="text"
-            {...register("tourduration", setValue("tourduration", duration))}
-          />
-          <input
-            className="hidden"
-            placeholder="Tour Status"
-            type="text"
-            {...register("tourstatus", setValue("tourstatus", "Pending"))}
-          />
           <input
             className="bg-yellow-500 text-white  p-2 my-2 font-bold w-full rounded-lg outline-none"
             type="submit"

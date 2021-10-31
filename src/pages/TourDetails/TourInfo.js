@@ -5,9 +5,17 @@ import {
   IoCalendarOutline,
   IoPaperPlaneOutline,
   IoPricetagsOutline,
+  IoLocationOutline,
 } from "react-icons/io5";
 
-const TourInfo = ({ duration, name, shortDes, description, price }) => {
+const TourInfo = ({
+  duration,
+  name,
+  country,
+  shortDes,
+  description,
+  price,
+}) => {
   return (
     <div className="md:col-span-2 lg:col-span-3 px-4">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center md:justify-items-start  p-2 py-4 rounded-lg items-center bg-gray-50 w-full  mt-8 flex shadow-sm border-2">
@@ -34,6 +42,11 @@ const TourInfo = ({ duration, name, shortDes, description, price }) => {
         <span className="text-base text-black">From</span>{" "}
         <span className="text-xl"> $</span>
         {price}
+      </p>
+      <p className="font-bold text-2xl mb-2">
+        {" "}
+        <IoLocationOutline className="inline text-red-500 font-bold" />{" "}
+        {country}{" "}
       </p>
       <p className="text-md font-medium my-2">{shortDes}</p>
       <p className="text-md font-medium my-2">{description}</p>

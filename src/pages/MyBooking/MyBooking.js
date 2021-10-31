@@ -9,11 +9,10 @@ const MyBooking = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch("https://safe-citadel-76628.herokuapp.com/orders")
+    fetch(`http://localhost:5000/myorders/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
-        const myorder = data.filter((item) => item.email === user.email);
-        setMyBooking(myorder);
+        setMyBooking(data);
         setIsloading(false);
       });
   }, []);
@@ -34,6 +33,7 @@ const MyBooking = () => {
         });
     }
   };
+  console.log(mybooking.length);
   return (
     <div style={{ paddingTop: "85px" }}>
       <div className="container mx-auto px-4">

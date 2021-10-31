@@ -15,7 +15,9 @@ const ManageBooking = () => {
       });
   }, []);
   const handleDeleteTour = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete?");
+    const proceed = window.confirm(
+      "Are you sure, you want to delete this booking?"
+    );
     if (proceed) {
       const url = `https://safe-citadel-76628.herokuapp.com/orders/${id}`;
       fetch(url, {
@@ -31,23 +33,7 @@ const ManageBooking = () => {
         });
     }
   };
-  const handleUpdateStatus = (id) => {
-    const url = `https://safe-citadel-76628.herokuapp.com/orders/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          alert("Update Sucessfull");
-          window.location.reload();
-        }
-      });
-  };
+
   return (
     <div style={{ paddingTop: "85px" }}>
       <div className="container mx-auto px-4">
