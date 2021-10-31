@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import ManageBookingTourCard from "../../components/ManageBookingTourCard";
 import Loading from "../../components/Loading";
 

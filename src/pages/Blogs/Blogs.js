@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import BlogCard from "../../components/BlogCard";
 import Loading from "../../components/Loading";
 import SectionHeder from "../../components/SectionHeder";
