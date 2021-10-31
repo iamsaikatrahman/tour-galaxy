@@ -52,7 +52,7 @@ const Navbar = () => {
             </Link>
           )}
           {!user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/contact">
               Contact Us
             </Link>
           )}
@@ -116,7 +116,7 @@ const Navbar = () => {
             </Link>
           )}
           {!user?.email && (
-            <Link className="p-2 text-lg font-medium" to="/home">
+            <Link className="p-2 text-lg font-medium" to="/contact">
               Contact Us
             </Link>
           )}

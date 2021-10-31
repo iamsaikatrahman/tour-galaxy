@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import BlogCard from "../../components/BlogCard";
 import Loading from "../../components/Loading";
 import ToursCard from "../../components/ToursCard";
@@ -53,6 +54,14 @@ const Home = () => {
           Our Blogs & News
         </h2>
         <div className="w-24 h-1.5 bg-yellow-400 rounded mx-auto mb-8"></div>
+        <p className="text-center">
+          If Helen Keller can look at life as a great adventure, what excuse{" "}
+          <br /> do the rest of us have? Take a chance and live life to the{" "}
+          <br /> fullest. When we are at our most daring{" "}
+          <span className="text-indigo-500 font-medium">
+            <Link to="/blogs">Read More Blogs..</Link>
+          </span>
+        </p>
         {isloadingForBlog ? (
           <Loading />
         ) : (

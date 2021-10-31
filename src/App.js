@@ -5,6 +5,7 @@ import AddTour from "./pages/AddTour/AddTour";
 import Login from "./pages/Authentication/Login";
 import PrivateRoute from "./pages/Authentication/PrivateRoute/PrivateRoute";
 import Blogs from "./pages/Blogs/Blogs";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import Footer from "./pages/Footer/Footer";
 import Header from "./pages/Header/Header";
 import Home from "./pages/Home/Home";
@@ -47,6 +48,9 @@ function App() {
               </Route>
               <Route path="/blogs">
                 <Blogs />
+              </Route>
+              <Route path="/contact">
+                <ContactUs />
               </Route>
               <Route path="*">
                 <NotFound />
